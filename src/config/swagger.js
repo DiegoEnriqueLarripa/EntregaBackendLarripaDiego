@@ -1,4 +1,3 @@
-// src/config/swagger.js
 import swaggerJsdoc from 'swagger-jsdoc';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -15,7 +14,7 @@ const swaggerOptions = {
             description: 'Documentación oficial de la API de Adoptme'
         }
     },
-    // Usamos path.join para evitar problemas de rutas en diferentes sistemas operativos
+    
     apis: [`${path.join(__dirname, '../docs/**/*.yaml')}`]
 };
 
