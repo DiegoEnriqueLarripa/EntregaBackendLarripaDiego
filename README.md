@@ -123,5 +123,22 @@ Se corrigió la arquitectura del proyecto para respetar la separación de respon
 
 ---
 
+📋 Historial de Mejoras - Entrega Final
+Se han implementado las siguientes mejoras críticas enfocadas en la robustez, calidad y despliegue del proyecto:
+🏗️ Documentación Profesional:
+Integración de Swagger UI (/apidocs) para una documentación interactiva y estandarizada de los módulos Users, Pets y Mocks.
+Separación de documentación mediante archivos .yaml para mantener la limpieza del código.
+🧪 Testing Funcional:
+Implementación de una suite de tests automatizados con Mocha, Chai y Supertest.
+Cobertura total: Tests sobre los routers de Users, Pets y Adoptions.
+Enfoque en casos negativos: Validación de errores de negocio (e.g., duplicidad de usuarios, adopción de mascotas ya adoptadas, campos faltantes) para garantizar la integridad del sistema.
+🐳 Dockerización:
+Creación de Dockerfile optimizado (basado en node:22-alpine para producción).
+Creación de .dockerignore para excluir archivos innecesarios (node_modules, test, .env).
+Configuración lista para despliegue en contenedores.
+🛠️ Ajustes de Arquitectura:
+Refactorización de controladores para consumir servicios desde la capa de Servicios/Repositorios, eliminando el acceso directo a los modelos de Mongoose y respetando el patrón de arquitectura por capas.
+
+
 ### Autor
 Desarrollado como parte del Desafío Entregable de Backend por el alumno Diego Enrique Larripa. 

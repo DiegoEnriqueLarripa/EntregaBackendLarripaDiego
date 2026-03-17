@@ -1,0 +1,37 @@
+paths:
+  /api/users:
+    get:
+      summary: Obtener todos los usuarios
+      responses:
+        200:
+          description: Lista de usuarios obtenida exitosamente
+    post:
+      summary: Crear un nuevo usuario
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                first_name: { type: string }
+                last_name: { type: string }
+                email: { type: string }
+                age: { type: integer }
+                password: { type: string }
+      responses:
+        201:
+          description: Usuario creado exitosamente
+  /api/users/{uid}:
+    get:
+      summary: Obtener un usuario por ID
+      parameters:
+        - name: uid
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        200:
+          description: Usuario encontrado
+        404:
+          description: Usuario no encontrado

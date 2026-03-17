@@ -1,0 +1,43 @@
+paths:
+  /api/mocks/mockingpets:
+    get:
+      summary: Generar 100 mascotas aleatorias (Mock)
+      description: Devuelve un array de 100 objetos mascota con datos aleatorios. No se guardan en la base de datos.
+      responses:
+        200:
+          description: Mascotas generadas exitosamente
+  /api/mocks/mockingusers:
+    get:
+      summary: Generar usuarios aleatorios (Mock)
+      description: Genera una cantidad específica de usuarios con contraseña encriptada y rol aleatorio.
+      parameters:
+        - in: query
+          name: count
+          schema:
+            type: integer
+          description: Número de usuarios a generar (por defecto 50)
+      responses:
+        200:
+          description: Usuarios generados exitosamente
+  /api/mocks/generateData:
+    post:
+      summary: Generar e insertar datos en la base de datos
+      description: Genera la cantidad indicada de usuarios y mascotas y los persiste en MongoDB.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                users:
+                  type: integer
+                  example: 10
+                pets:
+                  type: integer
+                  example: 5
+      responses:
+        201:
+          description: Datos generados e insertados con éxito
+        400:
+          description: Error en los parámetros numéricos
